@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private float mouseSensitivity = 90f;
     public Transform player;
     private bool OnPhone = false;
+
     private float lastput;
     void Start()
     {
@@ -17,14 +18,18 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(OnPhone != true)
         {
             FpsCamera();
 
         }
-        OpenPhone();
+        if(Phone.GetComponent<Phone_App>().onanimation == false)
+        {
+            OpenPhone();
+        }
+        
     }
     void FpsCamera()
     {
