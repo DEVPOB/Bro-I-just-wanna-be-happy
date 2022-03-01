@@ -283,7 +283,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 41024148}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1955963398}
+        m_TargetAssemblyTypeName: Phone_App, Assembly-CSharp
+        m_MethodName: Stat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &41024148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2270,7 +2282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 601007127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1955963398}
+        m_TargetAssemblyTypeName: Phone_App, Assembly-CSharp
+        m_MethodName: Guide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &606331672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,7 +3271,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1017231257}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1955963398}
+        m_TargetAssemblyTypeName: Phone_App, Assembly-CSharp
+        m_MethodName: Recovery
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1063258400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6493,7 +6529,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2138110017}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1955963398}
+        m_TargetAssemblyTypeName: Phone_App, Assembly-CSharp
+        m_MethodName: Call
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2138110017
 MonoBehaviour:
   m_ObjectHideFlags: 0
