@@ -6,18 +6,18 @@ public class Phone_App : MonoBehaviour
 {
     public GameObject CCTV_Manager;
     public Animator Anim;
-    public bool onanimation = false;
+    public bool onapp = false;
     public void Cam()
     {
         Anim.Play("CCTVAppTransition");
-        onanimation = true;
+        onapp = true;
         StartCoroutine(WaitForAnimation(Anim.GetCurrentAnimatorStateInfo(0).length));
         print("TEST");
     }
     IEnumerator WaitForAnimation(float _delay =0)
     {
         yield return new WaitForSeconds(_delay=.3f);
-        onanimation = false;
-        CCTV_Manager.GetComponent<CCTV>().enabled = true;
+        CCTV_Manager.GetComponent<CCTV>().cam[0].SetActive(true);
+        
     }
 }

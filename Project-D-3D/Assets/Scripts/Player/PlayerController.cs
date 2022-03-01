@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
             FpsCamera();
 
         }
-        if(Phone.GetComponent<Phone_App>().onanimation == false)
+        if(Phone.GetComponent<Phone_App>().onapp == false)
         {
             OpenPhone();
         }
@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            lastput = Time.time;
             Phone.GetComponent<Animator>().Play("ClosePhone");
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -69,5 +70,6 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+   
    
 }

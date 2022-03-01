@@ -7,29 +7,21 @@ public class CCTV : MonoBehaviour
     public GameObject CCTV_Manager;
 
     public GameObject maincamera;
+    public Phone_App Phone;
     public GameObject[] cam;
     private float lastput;
     public Animator CloseCCTV;
 
 
-    
-    void Start()
-    {
-        maincamera.SetActive(false);
-        cam[1].SetActive(true);
-    }
-
-    void Update()
-    {
-
-    }
     public void SwitchToCam2()
     {
+        maincamera.SetActive(false);
         cam[0].SetActive(false);
         cam[1].SetActive(true);
     }
     public void SwitchToCam1()
     {
+        maincamera.SetActive(false);
         cam[1].SetActive(false);
         cam[0].SetActive(true);
 
@@ -41,6 +33,7 @@ public class CCTV : MonoBehaviour
         CloseCCTV.Play("CCTVTransitionClose");
         cam[0].SetActive(false);
         cam[1].SetActive(false);
+        Phone.onapp = false;
         CCTV_Manager.GetComponent<CCTV>().enabled = false;
 
     }
