@@ -5634,6 +5634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93e7b5adf6a2734eaad3fd6efce2931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainSpotLight: {fileID: 959728731}
   sanity: 100
 --- !u!1 &966274550
 GameObject:
@@ -5747,8 +5748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainSpotLight: {fileID: 959728731}
-  Cam1Spotlight: {fileID: 234638873}
-  Cam2Spotlight: {fileID: 425867861}
 --- !u!4 &986545397
 Transform:
   m_ObjectHideFlags: 0
