@@ -6,9 +6,10 @@ using UnityEngine;
 public class Phone_App : MonoBehaviour
 {
 
+
     public GameObject CCTV_Manager;
     public Animator Anim;
-    public GameObject RecoveryApp;
+    public GameObject RecoveryApp,StatApp,CallApp;
     public GameObject GuideApp, Page1;
     public bool onapp = false;
     public void Cam()
@@ -34,11 +35,13 @@ public class Phone_App : MonoBehaviour
     public void Call()
     {
         Anim.Play("CALLOpen");
+        CallApp.SetActive(true);
         onapp = true;
     }
     public void Stat()
     {
         Anim.Play("StatOpen");
+        StatApp.SetActive(true);
         onapp = true;
     }
     public void Home()

@@ -5,16 +5,17 @@ using UnityEngine;
 public class Stat : MonoBehaviour
 {
     public float sanity = 100f;
-    
+
     void Update()
     {
         if(sanity <= 0f)
         {
             print("Sanity < 0");
         }
+        decreaseSanity();
     }
-    void sanityStat()
+    void decreaseSanity()
     {
         
-    }
+    }    
 }

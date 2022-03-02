@@ -7,7 +7,7 @@ public class CCTV : MonoBehaviour
     public GameObject CCTV_Manager;
 
     public GameObject maincamera;
-    public Phone_App Phone;
+    [SerializeField]Phone_App Phone;
     public GameObject[] cam;
     private float lastput;
     public Animator CloseCCTV;

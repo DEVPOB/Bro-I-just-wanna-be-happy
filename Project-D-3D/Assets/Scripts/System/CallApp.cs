@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CallApp : MonoBehaviour
 {
-    public Phone_App Phone;
+    [SerializeField]Phone_App Phone;
    
     void Update()
     {
