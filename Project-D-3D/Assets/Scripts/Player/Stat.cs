@@ -7,6 +7,8 @@ public class Stat : MonoBehaviour
     public GameObject MainSpotLight;
     public float sanity = 100f;
     private bool dead = false;
+    public bool NeedWifiFix = false;
+    public bool NeedLightFix = false;
 
     void Update()
     {
@@ -19,7 +21,7 @@ public class Stat : MonoBehaviour
         if(dead)
         {
             /**
-                * TODO : Do this Tomorow
+                * TODO : Non
             **/
             
         }
