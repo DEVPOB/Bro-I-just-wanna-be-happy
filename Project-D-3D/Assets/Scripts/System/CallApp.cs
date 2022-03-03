@@ -23,7 +23,7 @@ public class CallApp : MonoBehaviour
             CallingTime = CallingTime - Time.deltaTime;
             if(CallingTime <= 0)
             {
-                // Calling Success ON TODO
+                CancelBtn();
             }
         }
     }
