@@ -2,6 +2,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Phone_App : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Phone_App : MonoBehaviour
     {
         Anim.Play("CCTVAppTransition");
         onapp = true;
-        StartCoroutine(WaitForAnimation(Anim.GetCurrentAnimatorStateInfo(0).length));
+        CCTV_Manager.GetComponent<CCTV>().cam[0].SetActive(true);
+
     }
     public void Recovery()
     {
@@ -48,11 +50,5 @@ public class Phone_App : MonoBehaviour
     {
         Anim.Play("StatClose");
         onapp = false;
-    }
-    IEnumerator WaitForAnimation(float _delay =0)
-    {
-        yield return new WaitForSeconds(_delay=.3f);
-        CCTV_Manager.GetComponent<CCTV>().cam[0].SetActive(true);
-        
     }
 }

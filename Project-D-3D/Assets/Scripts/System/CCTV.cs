@@ -20,16 +20,12 @@ public class CCTV : MonoBehaviour
             Active_SpotLightCam1.SetActive(false);
             Active_SpotLightCam2.SetActive(false);
         }
-        if(!Input.GetKey(KeyCode.Q))
-        {
-            HeldKey = false;    
-        }
+       
         if(cam[0].activeInHierarchy == true)
         {
             if(Input.GetMouseButton(1))
             {
                 Active_SpotLightCam1.SetActive(true);
-                HeldKey = true;
             }
 
         }
@@ -64,7 +60,7 @@ public class CCTV : MonoBehaviour
         cam[0].SetActive(false);
         cam[1].SetActive(false);
         Phone.onapp = false;
-        CCTV_Manager.GetComponent<CCTV>().enabled = false;
+        
 
     }
 }
