@@ -12,6 +12,8 @@ public class CallApp : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextCallingSuccess, TextCallingFail;
     private float CallingTime = 3f;
     private float Onphone;
+    public bool CallingSuccess = false;
+    public bool CallingToilet_Helper = false;
 
     void Update()
     {
@@ -24,7 +26,9 @@ public class CallApp : MonoBehaviour
             CallingTime = CallingTime - Time.deltaTime;
             if (CallingTime <= 0)
             {
+
                 Anim.Play("CallingSuccess");
+                CallingSuccess = true;
                 CallingUI.SetActive(false);
                 CallingTime = 3f;
             }
@@ -35,15 +39,16 @@ public class CallApp : MonoBehaviour
    
     public void PlockerCalling()
     {
-
         CallingUI.SetActive(true);
         CallingTo_Text.text = "Plocker";
     }
     public void ToiletHelperCalling()
     {
 
+        CallingToilet_Helper = true;
         CallingUI.SetActive(true);
         CallingTo_Text.text = "Toilet Helper";
+        
     }
     public void CancelBtn()
     {

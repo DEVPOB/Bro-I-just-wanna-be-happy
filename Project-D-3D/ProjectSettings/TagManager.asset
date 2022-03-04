@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cam
   - SpotLight
+  - Enemy
   layers:
   - Default
   - TransparentFX

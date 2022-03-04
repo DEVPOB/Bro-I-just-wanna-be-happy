@@ -13,6 +13,7 @@ public class Phone_App : MonoBehaviour
     public GameObject RecoveryApp,StatApp,CallApp;
     public GameObject GuideApp, Page1;
     public bool onapp = false;
+    
     public void Cam()
     {
         Anim.Play("CCTVAppTransition");
