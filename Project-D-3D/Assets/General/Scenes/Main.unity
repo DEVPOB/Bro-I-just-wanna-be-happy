@@ -1401,13 +1401,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362cede696e331d4ca984f4596a27d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weightedValues:
+  - value: NormalFriend_AI
+    weight: 30
+  - value: GuyInFrontOfDoor_Ai
+    weight: 25
+  - value: RunnerFriend_Ai
+    weight: 25
+  - value: GuyWithMuscle_Ai
+    weight: 10
+  - value: FBI_Ai
+    weight: 5
   NormalFriend_Ai: {fileID: 1031861791}
   RunningFriend_Ai: {fileID: 668126942}
   MuscleGuy_Ai: {fileID: 805992780}
-  GuyInfrontDoor_Ai: {fileID: 547415350}
+  GuyInfrontofDoor_Ai: {fileID: 547415350}
   FBI_Ai: {fileID: 64795178}
   SpawnPoint1: {fileID: 67613453}
-  random: 0
 --- !u!4 &148737118
 Transform:
   m_ObjectHideFlags: 0
