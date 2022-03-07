@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float mouseSensitivity = 90f;
     public Transform player;
     private bool OnPhone = false;
+    public GameObject quotes;
+    public Quotes QuotesScript;
 
     private float lastput;
     void Start()
@@ -68,7 +70,18 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             OnPhone = false;
         }
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            quotes.SetActive(true);
+        }
         
+        if(quotes.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            quotes.SetActive(false);
+            QuotesScript.enabled = true;
+            QuotesScript.fullText = "I'M IN";
+
+        }
     }
    
    

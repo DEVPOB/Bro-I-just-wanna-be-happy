@@ -16,6 +16,7 @@ public class Friend_AI : MonoBehaviour
         {
             if(HasCall.CallingSuccess == false || HasCall.CallingToilet_Helper == false)
             {
+                Destroy(gameObject);
                 print("DEAD");
             }
         }

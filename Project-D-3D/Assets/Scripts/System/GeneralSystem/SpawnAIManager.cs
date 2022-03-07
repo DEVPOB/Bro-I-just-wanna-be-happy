@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,45 +10,47 @@ public class SpawnAIManager : MonoBehaviour
     public GameObject MuscleGuy_Ai;
     public GameObject GuyInfrontofDoor_Ai;
     public GameObject FBI_Ai;
-    public Transform SpawnPoint1;
+    public Transform[] SpawnPoint;
     void Start()
     {
+            StartCoroutine(test());
 
     }
     void Update()
     {
-        /**
-            * TODO : Do it in 3/6/2022 (cause i'm lazy bye)
-        **/
+        GameObject[] Ai_Spawn = GameObject.FindGameObjectsWithTag("Enemy");
+        if (Ai_Spawn.Length < 1)
+        {
+        }
+    }
+    IEnumerator test()
+    {
+        yield return new WaitForSeconds(20);
+        RandomSpawning();
+        yield return new WaitForSeconds(30);
+        RandomSpawning();
+    }
+    void RandomSpawning()
+    {
         string randomValue = GetrandomValue(weightedValues);
         switch (randomValue)
         {
             case "NormalFriend_AI":
-                Instantiate(NormalFriend_Ai,SpawnPoint1.position,Quaternion.identity);
+                Instantiate(NormalFriend_Ai, SpawnPoint[0].position, Quaternion.identity);
                 break;
             case "GuyInFrontOfDoor_Ai":
-                // 
+                Instantiate(GuyInfrontofDoor_Ai, SpawnPoint[1].position, Quaternion.identity);
                 break;
             case "RunnerFriend_Ai":
-                // 
+                Instantiate(RunningFriend_Ai, SpawnPoint[3].position, Quaternion.identity);
                 break;
             case "GuyWithMuscle_Ai":
-                // 
+                Instantiate(MuscleGuy_Ai, SpawnPoint[2].position, Quaternion.identity);
                 break;
             case "FBI_Ai":
-                // 
+                Instantiate(FBI_Ai, SpawnPoint[4].position, Quaternion.identity);
                 break;
         }
-        // if (randomValue == "NormalFriend_AI")
-        // {
-        //     print("TEST");
-        // }
-        // else if (randomValue == "GuyInFrontOfDoor_Ai")
-        // {
-
-        // }
-        // else if (randomValue == "")
-        // print(randomValue ?? "No entries found");
 
     }
     string GetrandomValue(List<WeightedValue> weightedValuelist)
