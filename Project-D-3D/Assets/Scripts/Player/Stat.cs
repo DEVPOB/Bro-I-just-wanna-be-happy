@@ -6,7 +6,7 @@ public class Stat : MonoBehaviour
 {
     public GameObject MainSpotLight;
     public float sanity = 100f;
-    private bool dead = false;
+    public bool dead = false;
     public bool NeedWifiFix = false;
     public bool NeedLightFix = false;
 

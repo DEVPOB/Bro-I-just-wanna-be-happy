@@ -8,10 +8,13 @@ public class Quotes : MonoBehaviour
     public float delay = 0.01f;
     public string fullText;
     private string currentText = "";
+    [SerializeField]PlayerController player;
 
     void Start()
     {
+      
         StartCoroutine(ShowText());   
+        
     }
     IEnumerator ShowText()
     {     
@@ -23,9 +26,14 @@ public class Quotes : MonoBehaviour
                 this.GetComponent<TextMeshProUGUI>().text = currentText;
                 yield return new WaitForSeconds(delay);
                 this.GetComponent<TextMeshProUGUI>().text = "";
-                        
+
+            }
+            if(true)
+            {
+                fullText = "";
             }
 
         }
+        
     }
 }

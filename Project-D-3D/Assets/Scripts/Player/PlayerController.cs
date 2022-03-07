@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool OnPhone = false;
     public GameObject quotes;
     public Quotes QuotesScript;
+    public bool something = false;
 
     private float lastput;
     void Start()
@@ -80,7 +81,7 @@ public class PlayerController : MonoBehaviour
             quotes.SetActive(false);
             QuotesScript.enabled = true;
             QuotesScript.fullText = "I'M IN";
-
+           
         }
     }
    
