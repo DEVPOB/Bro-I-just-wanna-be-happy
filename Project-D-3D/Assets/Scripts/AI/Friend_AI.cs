@@ -7,7 +7,7 @@ public class Friend_AI : MonoBehaviour
     public GameObject Friend_Ai;
     public Stat stat;
     public CallApp HasCall;
-    public float TimeRemainingToDie = 15f;
+    private float TimeRemainingToDie = 15f;
     void Update()
     {
     }

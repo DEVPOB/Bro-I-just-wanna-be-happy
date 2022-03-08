@@ -1370,8 +1370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e263e4a5f6794c641a2661ae2e8c6d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GuyInForntOf_Ai: {fileID: 0}
-  stat: {fileID: 0}
+  GuyInForntOf_Ai: {fileID: 5410737517110439478, guid: ef1c3024b6d7ce842adc52d0607033ef, type: 3}
+  stat: {fileID: 963194231}
   QuotesScript: {fileID: 1001946074}
 --- !u!114 &148737120
 MonoBehaviour:
@@ -1388,7 +1388,6 @@ MonoBehaviour:
   Friend_Ai: {fileID: 122633570036080750, guid: f872218652a27ce4f96c84bfca597a58, type: 3}
   stat: {fileID: 0}
   HasCall: {fileID: 2037089224}
-  TimeRemainingToDie: 15
 --- !u!1 &156551994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7058,7 +7057,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 963194228}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 2147483647
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0

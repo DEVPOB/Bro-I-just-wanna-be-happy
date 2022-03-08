@@ -41,6 +41,7 @@ public class RecoveryApp : MonoBehaviour
         }
         if(StatNeeded.NeedLightFix == true)
         {
+            
             FixLightBar.enabled = true;
             FixLightBtn.enabled = true;
             if(OnLightFix)
@@ -50,6 +51,7 @@ public class RecoveryApp : MonoBehaviour
                 FixLightBar.fillAmount = CurrentLightFix / max;
                 if(Light <= 0)
                 {
+                    StatNeeded.NeedLightFix = false;
                     FixLightBar.enabled = false;
                     FixLightBtn.enabled = false;
                 }
