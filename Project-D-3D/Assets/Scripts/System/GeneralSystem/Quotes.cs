@@ -8,32 +8,31 @@ public class Quotes : MonoBehaviour
     public float delay = 0.01f;
     public string fullText;
     private string currentText = "";
-    [SerializeField]PlayerController player;
+    public bool AlreadySaid = false;
+    [SerializeField] PlayerController player;
 
     void Start()
     {
-      
-        StartCoroutine(ShowText());   
-        
+        StartCoroutine(ShowText());
     }
     IEnumerator ShowText()
-    {     
-        while(true)
+    {
+        while (true)
         {
-            for(int i = 0; i < fullText.Length + 1 ; i++)
+            for (int i = 0; i < fullText.Length + 1; i++)
             {
-                currentText = fullText.Substring(0,i);
+                currentText = fullText.Substring(0, i);
                 this.GetComponent<TextMeshProUGUI>().text = currentText;
                 yield return new WaitForSeconds(delay);
                 this.GetComponent<TextMeshProUGUI>().text = "";
 
             }
-            if(true)
-            {
-                fullText = "";
-            }
+
+            AlreadySaid = true;
+            fullText = "";
+
 
         }
-        
+
     }
 }

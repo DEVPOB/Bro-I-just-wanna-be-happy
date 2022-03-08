@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Friend_AI : MonoBehaviour
 {
+    public GameObject Friend_Ai;
+    public Stat stat;
     public CallApp HasCall;
     public float TimeRemainingToDie = 15f;
     void Update()
@@ -17,7 +19,7 @@ public class Friend_AI : MonoBehaviour
             if(HasCall.CallingSuccess == false || HasCall.CallingToilet_Helper == false)
             {
                 Destroy(gameObject);
-                print("DEAD");
+                stat.dead = true;
             }
         }
     }
