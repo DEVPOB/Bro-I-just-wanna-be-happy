@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 public class RecoveryApp : MonoBehaviour
 {
     [SerializeField] Image FixWifiBar;
@@ -10,6 +8,7 @@ public class RecoveryApp : MonoBehaviour
     [SerializeField] Image FixWifiBtn;
     [SerializeField] Image FixLightBtn;
     [SerializeField]Phone_App Phone;
+    [SerializeField] GameObject MainLight;
     public Stat StatNeeded;
     public float WiFi = 100f;
     public float Light = 100f;
@@ -25,8 +24,8 @@ public class RecoveryApp : MonoBehaviour
         }
         if(StatNeeded.NeedWifiFix == true)
         {
-            FixWifiBar.enabled = true;
-            FixWifiBtn.enabled = true;
+            FixWifiBar.gameObject.SetActive(true);
+            FixWifiBtn.gameObject.SetActive(true);
             if(OnWifiFix)
             {
                 WiFi = WiFi - Time.deltaTime * 35;
@@ -42,8 +41,9 @@ public class RecoveryApp : MonoBehaviour
         if(StatNeeded.NeedLightFix == true)
         {
             
-            FixLightBar.enabled = true;
-            FixLightBtn.enabled = true;
+            FixLightBar.gameObject.SetActive(true);
+            FixLightBtn.gameObject.SetActive(true);
+            
             if(OnLightFix)
             {
                 Light = Light - Time.deltaTime * 35;
@@ -54,6 +54,7 @@ public class RecoveryApp : MonoBehaviour
                     StatNeeded.NeedLightFix = false;
                     FixLightBar.enabled = false;
                     FixLightBtn.enabled = false;
+                    MainLight.SetActive(true);
                 }
             }
         }

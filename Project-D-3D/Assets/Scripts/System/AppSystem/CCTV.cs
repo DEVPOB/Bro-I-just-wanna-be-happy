@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class CCTV : MonoBehaviour
@@ -12,6 +11,7 @@ public class CCTV : MonoBehaviour
     public GameObject[] cam;
     private float lastput;
     public Animator CloseCCTV;
+    public bool openlight = false;
     [SerializeField] bool HeldKey = false;
     void Update()
     {
@@ -19,6 +19,7 @@ public class CCTV : MonoBehaviour
         {
             Active_SpotLightCam1.SetActive(false);
             Active_SpotLightCam2.SetActive(false);
+            openlight = false;
         }
        
         if(cam[0].activeInHierarchy == true)
@@ -34,6 +35,8 @@ public class CCTV : MonoBehaviour
             if(Input.GetMouseButton(1))
             {
                 Active_SpotLightCam2.SetActive(true);
+                openlight = true;
+            
             }
         }
     }

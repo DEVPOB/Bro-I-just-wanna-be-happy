@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Friend_AI : MonoBehaviour
@@ -10,6 +9,10 @@ public class Friend_AI : MonoBehaviour
     private float TimeRemainingToDie = 15f;
     void Update()
     {
+        if(GameObject.Find("NormalFriend_AI(Clone)"))
+        {
+            KillPlayerByFriend();
+        }
     }
     void KillPlayerByFriend()
     {
@@ -18,8 +21,17 @@ public class Friend_AI : MonoBehaviour
         {
             if(HasCall.CallingSuccess == false || HasCall.CallingToilet_Helper == false)
             {
-                Destroy(gameObject);
+                Destroy(GameObject.Find("NormalFriend_AI(Clone)"));
                 stat.dead = true;
+
+            }
+        }
+        else if(TimeRemainingToDie > 0)
+        {
+            if(HasCall.CallingSuccess == true && HasCall.CallingToilet_Helper == true)
+            {
+                Destroy(GameObject.Find("NormalFriend_AI(Clone)"));
+                TimeRemainingToDie = 15f;
             }
         }
     }

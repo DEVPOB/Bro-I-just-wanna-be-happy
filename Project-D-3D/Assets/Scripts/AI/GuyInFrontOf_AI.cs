@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class GuyInFrontOf_AI : MonoBehaviour
@@ -7,32 +6,28 @@ public class GuyInFrontOf_AI : MonoBehaviour
     public GameObject GuyInForntOf_Ai;
     public Stat stat;
     public Quotes QuotesScript;
-    private float TimeRemainingToCloseLight = 7f;
+    public float TimeRemainingToCloseLight = 7f;
 
     void Update()
     {
-        if(GuyInForntOf_Ai != null)
+        if(GameObject.Find("GuyInFrontOfDoor_Ai(Clone)") != null)
         {
             TimeRemainingToCloseLight = TimeRemainingToCloseLight - Time.deltaTime;
             if(TimeRemainingToCloseLight <= 0)
             {
+                Destroy(GameObject.Find("GuyInFrontOfDoor_Ai(Clone)"));
                 stat.MainSpotLight.SetActive(false);
                 stat.NeedLightFix = true;
+                TimeRemainingToCloseLight = 7f;
             }
-            if(TimeRemainingToCloseLight <= 0)
-            {
-
-            }
-
+            
             if(QuotesScript.AlreadySaid == true)
             {
-                Destroy(GuyInForntOf_Ai.gameObject);
+                Destroy(GameObject.Find("GuyInFrontOfDoor_Ai(Clone)"));
                 QuotesScript.AlreadySaid = false;
+                TimeRemainingToCloseLight = 7f;
             }
-            else
-            {
-                stat.dead = true;
-            }
+            
 
         }
     }

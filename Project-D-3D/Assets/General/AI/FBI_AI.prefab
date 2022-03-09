@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 486103183352868876}
   - component: {fileID: 486103183352868879}
   - component: {fileID: 486103183352868878}
-  - component: {fileID: 486103183352868873}
   m_Layer: 0
   m_Name: FBI_AI
   m_TagString: Enemy
@@ -99,17 +98,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &486103183352868873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486103183352868872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d4cba7c9ceb054b8a8f197335b4ff7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HasCall: {fileID: 0}
-  TimeRemainingToDie: 10

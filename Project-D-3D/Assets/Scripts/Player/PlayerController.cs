@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private bool OnPhone = false;
     public GameObject quotes;
     public Quotes QuotesScript;
-    public bool something = false;
 
     private float lastput;
     void Start()
