@@ -9,7 +9,7 @@ public class MuscleGuy_AI : MonoBehaviour
     public Stat stat;
     void Update()
     {
-        if(GameObject.Find("MuscleGuy_AI(Clone)"))
+        if(GameObject.Find("MuscleGuy_AI(Clone)") != null)
         {
             KillPlayerByMuscleGuy();
             KillMuscleGuy();

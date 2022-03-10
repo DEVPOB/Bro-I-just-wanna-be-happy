@@ -8,13 +8,23 @@ public class CCTV : MonoBehaviour
 
     public GameObject maincamera;
     [SerializeField]Phone_App Phone;
+    [SerializeField] Stat stat;
+    [SerializeField] GameObject CamError;
     public GameObject[] cam;
     private float lastput;
     public Animator CloseCCTV;
     public bool openlight = false;
     [SerializeField] bool HeldKey = false;
+  
     void Update()
     {
+        // if(stat.NeedWifiFix == true)
+        // {
+        //     cam[0].SetActive(true);
+        //     cam[1].SetActive(false);
+        //     CamError.SetActive(true);
+        // }
+        
         if(HeldKey == false)
         {
             Active_SpotLightCam1.SetActive(false);
@@ -62,6 +72,7 @@ public class CCTV : MonoBehaviour
         CloseCCTV.Play("CCTVTransitionClose");
         cam[0].SetActive(false);
         cam[1].SetActive(false);
+        CamError.SetActive(false);
         Phone.onapp = false;
         
 

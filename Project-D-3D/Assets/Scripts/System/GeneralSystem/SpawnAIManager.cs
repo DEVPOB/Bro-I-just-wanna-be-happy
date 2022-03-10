@@ -25,7 +25,7 @@ public class SpawnAIManager : MonoBehaviour
     }
     IEnumerator test()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(5);
         RandomSpawning();
         yield return new WaitForSeconds(30);
         RandomSpawning();

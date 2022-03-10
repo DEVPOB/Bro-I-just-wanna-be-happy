@@ -9,7 +9,7 @@ public class Friend_AI : MonoBehaviour
     private float TimeRemainingToDie = 15f;
     void Update()
     {
-        if(GameObject.Find("NormalFriend_AI(Clone)"))
+        if(GameObject.Find("NormalFriend_AI(Clone)") != null)
         {
             KillPlayerByFriend();
         }
