@@ -18,12 +18,12 @@ public class CCTV : MonoBehaviour
   
     void Update()
     {
-        // if(stat.NeedWifiFix == true)
-        // {
-        //     cam[0].SetActive(true);
-        //     cam[1].SetActive(false);
-        //     CamError.SetActive(true);
-        // }
+        if(stat.NeedWifiFix == true && maincamera.activeInHierarchy != true)
+        {
+            cam[0].SetActive(true);
+            cam[1].SetActive(false);
+            CamError.SetActive(true);
+        }
         
         if(HeldKey == false)
         {
@@ -70,9 +70,9 @@ public class CCTV : MonoBehaviour
     {
         maincamera.SetActive(true);
         CloseCCTV.Play("CCTVTransitionClose");
+        CamError.SetActive(false);
         cam[0].SetActive(false);
         cam[1].SetActive(false);
-        CamError.SetActive(false);
         Phone.onapp = false;
         
 

@@ -33,6 +33,7 @@ public class RecoveryApp : MonoBehaviour
                 FixWifiBar.fillAmount = CurrentWifiFix/max;
                 if(WiFi <= 0)
                 {
+                    StatNeeded.NeedWifiFix = false;
                     FixWifiBar.enabled = false;
                     FixWifiBtn.enabled = false;
                 }

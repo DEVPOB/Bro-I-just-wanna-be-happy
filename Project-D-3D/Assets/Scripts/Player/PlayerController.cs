@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private float rotationOnY;
     private float mouseSensitivity = 90f;
     public Transform player;
-    private bool OnPhone = false;
+    public bool OnPhone = false;
     public GameObject quotes;
     public Quotes QuotesScript;
 
