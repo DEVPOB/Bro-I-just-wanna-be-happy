@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Friend_AI : MonoBehaviour
 {
-    public GameObject Friend_Ai;
     public Stat stat;
     public CallApp HasCall;
     private float TimeRemainingToDie = 15f;

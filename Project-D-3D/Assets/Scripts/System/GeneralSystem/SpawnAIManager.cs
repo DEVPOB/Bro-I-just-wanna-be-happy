@@ -18,17 +18,17 @@ public class SpawnAIManager : MonoBehaviour
     }
     void Update()
     {
-        GameObject[] Ai_Spawn = GameObject.FindGameObjectsWithTag("Enemy");
-        if (Ai_Spawn.Length < 1)
-        {
-        }
     }
     IEnumerator test()
     {
-        yield return new WaitForSeconds(5);
-        RandomSpawning();
-        yield return new WaitForSeconds(30);
-        RandomSpawning();
+        while(true)
+        {
+            yield return new WaitForSeconds(5);
+            RandomSpawning();
+            yield return new WaitForSeconds(30);
+            RandomSpawning();
+
+        }
     }
     void RandomSpawning()
     {

@@ -4,13 +4,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject Phone;
+    [SerializeField] GameObject CameraMain;
     private float rotationOnX;
     private float rotationOnY;
     private float mouseSensitivity = 90f;
-    public Transform player;
     public bool OnPhone = false;
     public GameObject quotes;
     public Quotes QuotesScript;
+    public bool OnKick = false;
 
     private float lastput;
     void Start()
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if(OnPhone != true)
         {
+            HoldDoor();
             FpsCamera();
 
         }
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         {
             OpenPhone();
         }
+
         
     }
     void FpsCamera()
@@ -80,6 +83,14 @@ public class PlayerController : MonoBehaviour
             QuotesScript.enabled = true;
             QuotesScript.fullText = "I'M IN";
            
+        }
+    }
+    void HoldDoor()
+    {
+        
+        if(Input.GetKeyDown(KeyCode.F) && OnPhone == false)
+        {
+            OnKick = true;
         }
     }
    

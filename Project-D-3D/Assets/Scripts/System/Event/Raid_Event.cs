@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Raid_Event : MonoBehaviour
 {
-    [SerializeField] GameObject RaidWall;
+    [SerializeField] GameObject RaidWallSpawn;
     [SerializeField] PlayerController Player;
     [SerializeField] float TimeRemainingToDie = 3f;
     [SerializeField] float TimeRemainingToSearch = 10f;
-
+    
     public Stat stat;
     public float m_thrust = 10f;
 
@@ -14,15 +14,15 @@ public class Raid_Event : MonoBehaviour
     {
         if(GameObject.Find("FBI_AI(Clone)") != null)
         {
-            RaidWall = GameObject.Find("RaidWall(Clone)");
+            GameObject RaidWall = GameObject.FindGameObjectWithTag("RaidWall");
             RaidWall.GetComponent<Rigidbody>().AddForce(transform.right * m_thrust,ForceMode.Impulse);
             Invoke("raid",2f);
             if(TimeRemainingToSearch <= 0)
             {
                 Destroy(GameObject.Find("FBI_AI(Clone)"));
                 TimeRemainingToSearch = 10f;
-                Destroy(GameObject.Find("RaidWall(Clone)"));
-                Instantiate(RaidWall);     
+                Destroy(RaidWall);
+                Instantiate(RaidWall,RaidWallSpawn.transform.position,Quaternion.Euler(0,90,0));     
             }
         }
         else

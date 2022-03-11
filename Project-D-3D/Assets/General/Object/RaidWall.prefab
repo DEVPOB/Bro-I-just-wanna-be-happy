@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 781264115219999586}
   m_Layer: 0
   m_Name: RaidWall
-  m_TagString: Untagged
+  m_TagString: RaidWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
