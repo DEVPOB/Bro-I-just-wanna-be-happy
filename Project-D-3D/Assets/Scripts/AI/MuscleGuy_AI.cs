@@ -5,7 +5,7 @@ public class MuscleGuy_AI : MonoBehaviour
 {
     public CCTV CCTVScirpt;
     [SerializeField] float TimeLookAtMuscleGuy = 5f;
-    [SerializeField] float TimeRemainingToDie = 20f;
+    [SerializeField] float TimeRemainingToDie = 10f;
     public Stat stat;
     void Update()
     {

@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Phone_App : MonoBehaviour
 {
-
-
     public GameObject CCTV_Manager;
     public Animator Anim;
     public GameObject RecoveryApp,StatApp,CallApp;

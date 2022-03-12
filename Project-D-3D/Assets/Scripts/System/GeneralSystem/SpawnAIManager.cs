@@ -11,23 +11,25 @@ public class SpawnAIManager : MonoBehaviour
     public GameObject GuyInfrontofDoor_Ai;
     public GameObject FBI_Ai;
     public Transform[] SpawnPoint;
+    private int RandomSpawnTime;
     void Start()
     {
-            StartCoroutine(test());
+            StartCoroutine(Spawn());
 
     }
-    void Update()
+
+    IEnumerator Spawn()
     {
-    }
-    IEnumerator test()
-    {
+        RandomSpawnTime = Random.Range(10,32);
         while(true)
         {
-            yield return new WaitForSeconds(5);
+            print(RandomSpawnTime);
+            yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();
-            yield return new WaitForSeconds(30);
+            print(RandomSpawnTime);
+            yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();
-
+            
         }
     }
     void RandomSpawning()

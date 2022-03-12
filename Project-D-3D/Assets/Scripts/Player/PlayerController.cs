@@ -87,10 +87,13 @@ public class PlayerController : MonoBehaviour
     }
     void HoldDoor()
     {
-        
         if(Input.GetKeyDown(KeyCode.F) && OnPhone == false)
         {
             OnKick = true;
+            if(GameObject.Find("Running_Ai(Clone)") == null)
+            {
+                OnKick = false;
+            }
         }
     }
    

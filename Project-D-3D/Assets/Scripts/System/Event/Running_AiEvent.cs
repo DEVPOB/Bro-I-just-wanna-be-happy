@@ -4,26 +4,19 @@ using UnityEngine;
 public class Running_AiEvent : MonoBehaviour
 {
     public Stat stat;
+    [SerializeField] Transform SpawnDoor;
     [SerializeField] float TimeRemainingToDie = 4f;
     public float m_thrust = 10f;
     [SerializeField] PlayerController Player;
-    private float TimeRemainingToDestroy = 3f;
-    
+
     void Update()
     {
         if(GameObject.Find("Running_Ai(Clone)") != null)
         {
-            TimeRemainingToDestroy = TimeRemainingToDestroy - Time.deltaTime;
-            if(TimeRemainingToDestroy <= 0)
-            {
-                Destroy(GameObject.Find("Running_Ai(Clone)"));
-            }
+            KillRunner_Ai();
             DestroyDoor();
             KillPlayerByRunner();
-            KillRunner_Ai();
         }
-
-        
     }
     void DestroyDoor()
     {
@@ -41,9 +34,14 @@ public class Running_AiEvent : MonoBehaviour
     }
     void KillRunner_Ai()
     {
+        GameObject Door = GameObject.FindGameObjectWithTag("Door");
         if(Player.OnKick == true)
         {
-            Destroy(GameObject.Find("KillRunner_Ai(Clone)"));
+            Destroy(Door);
+            Instantiate(Door,SpawnDoor.position,Quaternion.identity);
+            Destroy(GameObject.Find("Running_Ai(Clone)"));
+            TimeRemainingToDie = 4f;
+            Player.OnKick = false;
         }
         
     }
