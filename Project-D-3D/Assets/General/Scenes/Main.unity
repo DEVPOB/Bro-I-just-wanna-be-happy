@@ -7582,7 +7582,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001946070}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 188122d83d1809741ae2c9c299688df2, type: 3}
   m_Name: 
@@ -7590,7 +7590,6 @@ MonoBehaviour:
   delay: 0.1
   fullText: 
   AlreadySaid: 0
-  player: {fileID: 963194229}
 --- !u!1 &1017231255
 GameObject:
   m_ObjectHideFlags: 0

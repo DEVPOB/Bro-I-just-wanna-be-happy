@@ -24,7 +24,6 @@ public class GuyInFrontOf_AI : MonoBehaviour
             if(QuotesScript.AlreadySaid == true)
             {
                 Destroy(GameObject.Find("GuyInFrontOfDoor_Ai(Clone)"));
-                QuotesScript.AlreadySaid = false;
                 TimeRemainingToCloseLight = 7f;
             }
             

@@ -13,7 +13,6 @@ public class Dead : MonoBehaviour
     }
     IEnumerator DelayDead()
     {
-        print("Now Dead");
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Main");
     }

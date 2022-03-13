@@ -80,9 +80,9 @@ public class PlayerController : MonoBehaviour
         if(quotes.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Keypad1))
         {
             quotes.SetActive(false);
-            QuotesScript.enabled = true;
+            QuotesScript.Start();
             QuotesScript.fullText = "I'M IN";
-           
+
         }
     }
     void HoldDoor()

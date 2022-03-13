@@ -20,12 +20,13 @@ public class SpawnAIManager : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        RandomSpawnTime = Random.Range(10,32);
         while(true)
         {
+            RandomSpawnTime = Random.Range(10,32);
             print(RandomSpawnTime);
             yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();
+            RandomSpawnTime = Random.Range(10,32);
             print(RandomSpawnTime);
             yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();

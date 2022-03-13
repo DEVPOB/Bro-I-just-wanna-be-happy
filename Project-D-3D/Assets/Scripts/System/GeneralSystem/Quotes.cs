@@ -9,9 +9,8 @@ public class Quotes : MonoBehaviour
     public string fullText;
     private string currentText = "";
     public bool AlreadySaid = false;
-    [SerializeField] PlayerController player;
 
-    void Start()
+    public void Start()
     {
         StartCoroutine(ShowText());
     }
@@ -25,14 +24,16 @@ public class Quotes : MonoBehaviour
                 this.GetComponent<TextMeshProUGUI>().text = currentText;
                 yield return new WaitForSeconds(delay);
                 this.GetComponent<TextMeshProUGUI>().text = "";
-
             }
-
             AlreadySaid = true;
-            fullText = "";
-
+            yield return new WaitForSeconds(1);
+            break;
 
         }
+       
+        fullText = "";
+        AlreadySaid = false;
+        
 
     }
 }
