@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject Phone;
     [SerializeField] GameObject CameraMain;
+    [SerializeField] GameObject PauseMenu;
     private float rotationOnX;
     private float rotationOnY;
     private float mouseSensitivity = 90f;
@@ -22,18 +23,18 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(OnPhone != true)
+        if (OnPhone != true)
         {
             HoldDoor();
             FpsCamera();
 
         }
-        if(Phone.GetComponent<Phone_App>().onapp == false)
+        if (Phone.GetComponent<Phone_App>().onapp == false)
         {
             OpenPhone();
         }
+        PauseGame();
 
-        
     }
     void FpsCamera()
     {
@@ -44,11 +45,11 @@ public class PlayerController : MonoBehaviour
         rotationOnY += mousex;
         rotationOnX = Mathf.Clamp(rotationOnX, -90f, 90f);
         rotationOnY = Mathf.Clamp(rotationOnY, -90f, 90f);
-        transform.localEulerAngles = new Vector3(rotationOnX, rotationOnY ,0f);
+        transform.localEulerAngles = new Vector3(rotationOnX, rotationOnY, 0f);
     }
     void OpenPhone()
     {
-        if(Input.GetKeyDown(KeyCode.E) && OnPhone == false)
+        if (Input.GetKeyDown(KeyCode.E) && OnPhone == false)
         {
             if (Time.time - lastput < .5f)
             {
@@ -60,7 +61,7 @@ public class PlayerController : MonoBehaviour
             lastput = Time.time;
             OnPhone = true;
         }
-        if(Input.GetKeyDown(KeyCode.E) && OnPhone == true)
+        if (Input.GetKeyDown(KeyCode.E) && OnPhone == true)
         {
             if (Time.time - lastput < .5f)
             {
@@ -72,12 +73,12 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             OnPhone = false;
         }
-        if(Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             quotes.SetActive(true);
         }
-        
-        if(quotes.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Keypad1))
+
+        if (quotes.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Keypad1))
         {
             quotes.SetActive(false);
             QuotesScript.Start();
@@ -87,15 +88,25 @@ public class PlayerController : MonoBehaviour
     }
     void HoldDoor()
     {
-        if(Input.GetKeyDown(KeyCode.F) && OnPhone == false)
+        if (Input.GetKeyDown(KeyCode.F) && OnPhone == false)
         {
             OnKick = true;
-            if(GameObject.Find("Running_Ai(Clone)") == null)
+            if (GameObject.Find("Running_Ai(Clone)") == null)
             {
                 OnKick = false;
             }
         }
     }
-   
-   
+    void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+        }
+    }
+
+
 }

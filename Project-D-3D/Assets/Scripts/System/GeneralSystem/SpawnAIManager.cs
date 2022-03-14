@@ -14,19 +14,18 @@ public class SpawnAIManager : MonoBehaviour
     private int RandomSpawnTime;
     void Start()
     {
-            StartCoroutine(Spawn());
-
+        StartCoroutine(Spawn());
     }
 
     IEnumerator Spawn()
     {
         while(true)
         {
-            RandomSpawnTime = Random.Range(10,32);
+            RandomSpawnTime = Random.Range(10,20);
             print(RandomSpawnTime);
             yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();
-            RandomSpawnTime = Random.Range(10,32);
+            RandomSpawnTime = Random.Range(5,10);
             print(RandomSpawnTime);
             yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();
