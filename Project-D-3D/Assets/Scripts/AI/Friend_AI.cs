@@ -31,6 +31,8 @@ public class Friend_AI : MonoBehaviour
             {
                 Destroy(GameObject.Find("NormalFriend_AI(Clone)"));
                 TimeRemainingToDie = 15f;
+                HasCall.CallingSuccess = false;
+                HasCall.CallingToilet_Helper = false;
             }
         }
     }
