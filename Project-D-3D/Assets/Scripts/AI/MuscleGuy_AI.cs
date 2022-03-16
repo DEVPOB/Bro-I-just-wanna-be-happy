@@ -22,7 +22,9 @@ public class MuscleGuy_AI : MonoBehaviour
             TimeRemainingToDie = TimeRemainingToDie - Time.deltaTime;
             if(TimeRemainingToDie <= 0)
             {
+                CCTVScirpt.exit();
                 stat.dead = true;
+
             }
         }
     }

@@ -4,8 +4,10 @@ using UnityEngine;
 public class Friend_AI : MonoBehaviour
 {
     public Stat stat;
+    [SerializeField] CCTV CCTVScript;
     public CallApp HasCall;
-    private float TimeRemainingToDie = 15f;
+
+    [SerializeField] float TimeRemainingToDie = 15f;
     void Update()
     {
         if(GameObject.Find("NormalFriend_AI(Clone)") != null)
@@ -21,6 +23,7 @@ public class Friend_AI : MonoBehaviour
             if(HasCall.CallingSuccess == false || HasCall.CallingToilet_Helper == false)
             {
                 Destroy(GameObject.Find("NormalFriend_AI(Clone)"));
+                CCTVScript.exit();
                 stat.dead = true;
 
             }
