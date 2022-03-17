@@ -13,16 +13,17 @@ public class Running_AiEvent : MonoBehaviour
     {
         if(GameObject.Find("Running_Ai(Clone)") != null)
         {
+            FindObjectOfType<SFXManager>().Play("BreakDoor");
             KillRunner_Ai();
             DestroyDoor();
             KillPlayerByRunner();
+            
         }
     }
     void DestroyDoor()
     {
         GameObject Door = GameObject.FindGameObjectWithTag("Door");
         Door.GetComponent<Rigidbody>().AddForce(-transform.right * m_thrust,ForceMode.Impulse);
-
     }
     void KillPlayerByRunner()
     {

@@ -1,20 +1,29 @@
-
+using System;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
-    public AudioSource Audio;
-    public AudioClip test;
-    public static SFXManager sfxInstance;
-
+    public Sound[] sounds;
+   
     void Awake()
     {
-        if(sfxInstance != null && sfxInstance != this)
+        foreach (Sound s in sounds)
         {
-            Destroy(this.gameObject);
-            return;
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
         }
-        sfxInstance = this;
-        DontDestroyOnLoad(this);
+    }
+    void Start()
+    {
+        // Play("AmbientToiletRoom");
+    }
+    public void Play(string name)
+    {
+        Sound s = Array.Find(sounds,sound => sound.name == name);
+        s.source.Play();
     }
 }
