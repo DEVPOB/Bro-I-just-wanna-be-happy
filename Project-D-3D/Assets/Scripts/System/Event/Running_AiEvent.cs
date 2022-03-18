@@ -8,12 +8,11 @@ public class Running_AiEvent : MonoBehaviour
     [SerializeField] float TimeRemainingToDie = 4f;
     public float m_thrust = 10f;
     [SerializeField] PlayerController Player;
-
+    
     void Update()
     {
         if(GameObject.Find("Running_Ai(Clone)") != null)
         {
-            FindObjectOfType<SFXManager>().Play("BreakDoor");
             KillRunner_Ai();
             DestroyDoor();
             KillPlayerByRunner();

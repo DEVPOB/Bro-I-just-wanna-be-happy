@@ -10,9 +10,10 @@ public class Stat : MonoBehaviour
     public bool NeedLightFix = false;
     
 
-
+    
     void Update()
     {
+
         if(sanity <= 0f)
         {
             dead = true;

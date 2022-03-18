@@ -19,8 +19,10 @@ public class SFXManager : MonoBehaviour
     }
     void Start()
     {
-        // Play("AmbientToiletRoom");
+        Play("AmbientToiletRoom");
+
     }
+    
     public void Play(string name)
     {
         Sound s = Array.Find(sounds,sound => sound.name == name);

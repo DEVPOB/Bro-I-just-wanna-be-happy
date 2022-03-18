@@ -39,6 +39,7 @@ public class SpawnAIManager : MonoBehaviour
         {
             case "NormalFriend_AI":
                 Instantiate(NormalFriend_Ai, SpawnPoint[0].position, Quaternion.identity);
+
                 break;
             case "GuyInFrontOfDoor_Ai":
                 Instantiate(GuyInfrontofDoor_Ai, SpawnPoint[1].position, Quaternion.identity);
