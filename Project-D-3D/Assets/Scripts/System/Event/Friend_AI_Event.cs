@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Friend_AI : MonoBehaviour
+public class Friend_AI_Event : MonoBehaviour
 {
     public Stat stat;
     [SerializeField] CCTV CCTVScript;

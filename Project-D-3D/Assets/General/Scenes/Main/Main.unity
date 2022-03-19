@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148737116}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 362cede696e331d4ca984f4596a27d54, type: 3}
   m_Name: 
@@ -1599,7 +1599,7 @@ MonoBehaviour:
   - value: GuyInFrontOfDoor_Ai
     weight: 30
   - value: RunnerFriend_Ai
-    weight: 10000
+    weight: 25
   - value: GuyWithMuscle_Ai
     weight: 10
   - value: FBI_Ai
@@ -3159,6 +3159,7 @@ GameObject:
   - component: {fileID: 349358588}
   - component: {fileID: 349358587}
   - component: {fileID: 349358589}
+  - component: {fileID: 349358590}
   m_Layer: 0
   m_Name: Cam1
   m_TagString: Cam
@@ -3286,6 +3287,14 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!81 &349358590
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349358585}
+  m_Enabled: 1
 --- !u!1 &354047982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,9 +3353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Plocker
-
-'
+  m_text: Life coach
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b6f917e91f1f2f47b0db2dfec1c2153, type: 2}
   m_sharedMaterial: {fileID: -2041894091228842639, guid: 6b6f917e91f1f2f47b0db2dfec1c2153, type: 2}
@@ -9723,7 +9730,61 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: BreakDoor
-    clip: {fileID: 8300000, guid: 947e9fe01a297554ca85ba0480536934, type: 3}
+    clip: {fileID: 8300000, guid: 9e96a196187eef74bbd830c9c6ed631f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SelectSFX
+    clip: {fileID: 8300000, guid: 62353cb9ccad83b4b8c5e30e982888a2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Running_AiSound2
+    clip: {fileID: 8300000, guid: 23771e36f2294b64ab8939713a1dbf10, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ExitSFX
+    clip: {fileID: 8300000, guid: 5842364af57ff704f919f7893886b2c2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LockDoorSFX
+    clip: {fileID: 8300000, guid: c5f820b435694754bb559135dfff56a4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PickPhone
+    clip: {fileID: 8300000, guid: 66d99c9b6fbbfe341aced6a0a9a91d51, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ClosePhone
+    clip: {fileID: 8300000, guid: 7473518c7ce659246896ca0e99afe36f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OpenLightSFX
+    clip: {fileID: 8300000, guid: 823117f3af764c347987aab8bc2972d4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FixingSFX
+    clip: {fileID: 8300000, guid: e1798f60ff6a09e4cafb72a71702aa0c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CallSFX
+    clip: {fileID: 8300000, guid: fa9b8cd9b28bfb747a0c2991f95ceabf, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -11592,6 +11653,7 @@ GameObject:
   - component: {fileID: 1247742831}
   - component: {fileID: 1247742830}
   - component: {fileID: 1247742832}
+  - component: {fileID: 1247742833}
   m_Layer: 0
   m_Name: Cam2
   m_TagString: Cam
@@ -11719,6 +11781,14 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!81 &1247742833
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247742828}
+  m_Enabled: 1
 --- !u!1 &1252456404
 GameObject:
   m_ObjectHideFlags: 0
@@ -13031,7 +13101,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2037089224}
         m_TargetAssemblyTypeName: CallApp, Assembly-CSharp
-        m_MethodName: PlockerCalling
+        m_MethodName: Life_CoachCalling
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17625,8 +17695,12 @@ MonoBehaviour:
   CallingTo_Text: {fileID: 1847981041}
   TextCallingSuccess: {fileID: 425769170}
   TextCallingFail: {fileID: 293862862}
+  QuotesScript: {fileID: 1001946074}
+  stat: {fileID: 963194231}
   CallingSuccess: 0
+  CallingCoach: 0
   CallingToilet_Helper: 0
+  CoolDown: 0
 --- !u!1 &2041289375
 GameObject:
   m_ObjectHideFlags: 0
@@ -18530,6 +18604,11 @@ MonoBehaviour:
   StatNeeded: {fileID: 963194231}
   WiFi: 100
   Light: 100
+  max: 100
+  CurrentWifiFix: 0
+  CurrentLightFix: 0
+  OnWifiFix: 0
+  OnLightFix: 0
 --- !u!1001 &781264114358646617
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class GuyInFrontOf_AI : MonoBehaviour
+public class GuyInFrontOf_AI_Event : MonoBehaviour
 {
     public GameObject GuyInForntOf_Ai;
     public Stat stat;

@@ -12,10 +12,10 @@ public class RecoveryApp : MonoBehaviour
     public Stat StatNeeded;
     public float WiFi = 100f;
     public float Light = 100f;
-    private float max = 100f;
-    private float CurrentWifiFix,CurrentLightFix;
-    private bool OnWifiFix = false;
-    private bool OnLightFix = false;
+    [SerializeField]private float max = 100f;
+    [SerializeField]private float CurrentWifiFix,CurrentLightFix;
+    [SerializeField]private bool OnWifiFix = false;
+    [SerializeField]private bool OnLightFix = false;
     void Update()
     {
         if(Phone.onapp == false)
@@ -34,8 +34,12 @@ public class RecoveryApp : MonoBehaviour
                 if(WiFi <= 0)
                 {
                     StatNeeded.NeedWifiFix = false;
-                    FixWifiBar.enabled = false;
-                    FixWifiBtn.enabled = false;
+                    FixWifiBar.gameObject.SetActive(false);
+                    FixWifiBtn.gameObject.SetActive(false);
+                    FixWifiBar.fillAmount = 1;
+                    WiFi = 100f;
+                    OnWifiFix = false;
+                    FindObjectOfType<SFXManager>().Play("SelectSFX");
                 }
             }
         }
@@ -53,9 +57,13 @@ public class RecoveryApp : MonoBehaviour
                 if(Light <= 0)
                 {
                     StatNeeded.NeedLightFix = false;
-                    FixLightBar.enabled = false;
-                    FixLightBtn.enabled = false;
+                    FixLightBar.gameObject.SetActive(false);
+                    FixLightBtn.gameObject.SetActive(false);
+                    FixLightBar.fillAmount = 1;
                     MainLight.SetActive(true);
+                    Light = 100f;
+                    OnLightFix = false;
+                    FindObjectOfType<SFXManager>().Play("SelectSFX");
                 }
             }
         }
@@ -67,7 +75,6 @@ public class RecoveryApp : MonoBehaviour
     }
     public void LightFix()
     {
-        
         OnLightFix = true;
     }
     

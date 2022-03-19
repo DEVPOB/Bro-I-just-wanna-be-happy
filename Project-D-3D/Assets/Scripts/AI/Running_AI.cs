@@ -6,6 +6,7 @@ public class Running_AI : MonoBehaviour
     void Start()
     {
         FindObjectOfType<SFXManager>().Play("BreakDoor");
+        FindObjectOfType<SFXManager>().Play("Running_AiSound2");
     }
     void Update()
     {

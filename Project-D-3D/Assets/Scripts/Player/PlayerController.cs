@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            FindObjectOfType<SFXManager>().Play("PickPhone");
             Phone.GetComponent<Animator>().Play("PutPhone");
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             lastput = Time.time;
+            FindObjectOfType<SFXManager>().Play("ClosePhone");
             Phone.GetComponent<Animator>().Play("ClosePhone");
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -90,6 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && OnPhone == false)
         {
+            FindObjectOfType<SFXManager>().Play("LockDoorSFX");
             OnKick = true;
             if (GameObject.Find("Running_Ai(Clone)") == null)
             {

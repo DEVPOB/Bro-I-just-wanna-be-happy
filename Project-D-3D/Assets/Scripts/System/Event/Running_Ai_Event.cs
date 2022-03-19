@@ -1,14 +1,13 @@
 
 using UnityEngine;
 
-public class Running_AiEvent : MonoBehaviour
+public class Running_Ai_Event : MonoBehaviour
 {
     public Stat stat;
     [SerializeField] Transform SpawnDoor;
     [SerializeField] float TimeRemainingToDie = 4f;
     public float m_thrust = 10f;
     [SerializeField] PlayerController Player;
-    
     void Update()
     {
         if(GameObject.Find("Running_Ai(Clone)") != null)
@@ -16,7 +15,6 @@ public class Running_AiEvent : MonoBehaviour
             KillRunner_Ai();
             DestroyDoor();
             KillPlayerByRunner();
-            
         }
     }
     void DestroyDoor()

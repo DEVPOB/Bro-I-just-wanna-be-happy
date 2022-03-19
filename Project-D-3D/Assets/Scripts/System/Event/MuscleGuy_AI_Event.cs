@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class MuscleGuy_AI : MonoBehaviour
+public class MuscleGuy_AI_Event : MonoBehaviour
 {
     public CCTV CCTVScirpt;
     [SerializeField] float TimeLookAtMuscleGuy = 5f;

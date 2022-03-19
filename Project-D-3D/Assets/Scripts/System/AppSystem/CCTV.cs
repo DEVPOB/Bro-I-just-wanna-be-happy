@@ -36,6 +36,7 @@ public class CCTV : MonoBehaviour
         {
             if(Input.GetMouseButton(1))
             {
+                FindObjectOfType<SFXManager>().Play("OpenLightSFX");
                 Active_SpotLightCam1.SetActive(true);
             }
 
@@ -44,6 +45,7 @@ public class CCTV : MonoBehaviour
         {
             if(Input.GetMouseButton(1))
             {
+                FindObjectOfType<SFXManager>().Play("OpenLightSFX");
                 Active_SpotLightCam2.SetActive(true);
                 openlight = true;
             
@@ -68,6 +70,7 @@ public class CCTV : MonoBehaviour
 
     public void exit()
     {
+        FindObjectOfType<SFXManager>().Play("ExitSFX");
         maincamera.SetActive(true);
         CloseCCTV.Play("CCTVTransitionClose");
         CamError.SetActive(false);
