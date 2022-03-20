@@ -1588,14 +1588,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148737116}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 362cede696e331d4ca984f4596a27d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weightedValues:
   - value: NormalFriend_AI
-    weight: 30
+    weight: 1000
   - value: GuyInFrontOfDoor_Ai
     weight: 30
   - value: RunnerFriend_Ai
@@ -1639,13 +1639,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 148737116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e263e4a5f6794c641a2661ae2e8c6d4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 29a11af69d805a14bbabbefb602083fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GuyInForntOf_Ai: {fileID: 5410737517110439478, guid: ef1c3024b6d7ce842adc52d0607033ef, type: 3}
+  CCTVScirpt: {fileID: 1063258402}
+  TimeLookAtMuscleGuy: 5
+  TimeRemainingToDie: 10
   stat: {fileID: 963194231}
-  QuotesScript: {fileID: 1001946074}
-  TimeRemainingToCloseLight: 7
 --- !u!114 &148737120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,13 +1655,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 148737116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d4cba7c9ceb054b8a8f197335b4ff7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee9b263435bb7d0498e49045bbfaaee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GuyInForntOf_Ai: {fileID: 5410737517110439478, guid: ef1c3024b6d7ce842adc52d0607033ef, type: 3}
   stat: {fileID: 963194231}
-  CCTVScript: {fileID: 1063258402}
-  HasCall: {fileID: 2037089224}
-  TimeRemainingToDie: 15
+  QuotesScript: {fileID: 1001946074}
+  TimeRemainingToCloseLight: 7
+  HasDestroy: 0
 --- !u!114 &148737121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1671,13 +1672,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 148737116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da331e63585b3af4bac5bc90010c7626, type: 3}
+  m_Script: {fileID: 11500000, guid: a58b6e61ee402c1479ffabd4f9181824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CCTVScirpt: {fileID: 1063258402}
-  TimeLookAtMuscleGuy: 5
-  TimeRemainingToDie: 10
   stat: {fileID: 963194231}
+  CCTVScript: {fileID: 1063258402}
+  HasCall: {fileID: 2037089224}
+  TimeRemainingToDie: 13
 --- !u!114 &148737122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,12 +1706,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 148737116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a074ade37244ff9499e1db6b188e3805, type: 3}
+  m_Script: {fileID: 11500000, guid: c03f7ff72637b004397e3ea885db26da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stat: {fileID: 963194231}
   SpawnDoor: {fileID: 645957550}
-  TimeRemainingToDie: 3
+  TimeRemainingToDie: 4
   m_thrust: 10
   Player: {fileID: 963194229}
 --- !u!1 &156551994
@@ -5121,7 +5122,7 @@ GameObject:
   - component: {fileID: 555083106}
   - component: {fileID: 555083105}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PhoneText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5144,7 +5145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 226, y: 65.69888}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555083105
@@ -5167,7 +5168,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E
+  m_text: 'Phone
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b6f917e91f1f2f47b0db2dfec1c2153, type: 2}
   m_sharedMaterial: {fileID: -2041894091228842639, guid: 6b6f917e91f1f2f47b0db2dfec1c2153, type: 2}
@@ -5602,7 +5605,7 @@ GameObject:
   - component: {fileID: 585659399}
   - component: {fileID: 585659398}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: LockDoorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5625,7 +5628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 200, y: 150}
+  m_AnchoredPosition: {x: 225.99548, y: 175.9992}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &585659398
@@ -5648,7 +5651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press F
+  m_text: Lock Door
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b6f917e91f1f2f47b0db2dfec1c2153, type: 2}
   m_sharedMaterial: {fileID: -2041894091228842639, guid: 6b6f917e91f1f2f47b0db2dfec1c2153, type: 2}
@@ -8939,7 +8942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainSpotLight: {fileID: 959728731}
-  sanity: 30
+  sanity: 40
   dead: 0
   NeedWifiFix: 0
   NeedLightFix: 0
@@ -9785,6 +9788,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: CallSFX
     clip: {fileID: 8300000, guid: fa9b8cd9b28bfb747a0c2991f95ceabf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GuyInFrontOfDoor_GoneSFX
+    clip: {fileID: 8300000, guid: fa3d1bf5b1a424c41b0dadf4cd261e7e, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -11254,7 +11263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 70.004456, y: 65.69888}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156489088
@@ -11277,7 +11286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2ee7b4e220ad55e4a9ed49ed8f12bbbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c59cbd08cc010814c9e4eabd7c4fa727, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12936,7 +12945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 150}
+  m_AnchoredPosition: {x: 70, y: 176}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447906582
@@ -12959,7 +12968,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2ee7b4e220ad55e4a9ed49ed8f12bbbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87180f0951cba2e43b5a2394f1ffe45d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17697,10 +17706,12 @@ MonoBehaviour:
   TextCallingFail: {fileID: 293862862}
   QuotesScript: {fileID: 1001946074}
   stat: {fileID: 963194231}
+  CoolDownTime: 6
   CallingSuccess: 0
   CallingCoach: 0
   CallingToilet_Helper: 0
-  CoolDown: 0
+  CanKillNormalFriend: 0
+  CanCall: 1
 --- !u!1 &2041289375
 GameObject:
   m_ObjectHideFlags: 0

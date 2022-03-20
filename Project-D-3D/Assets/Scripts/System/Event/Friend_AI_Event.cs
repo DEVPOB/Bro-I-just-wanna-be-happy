@@ -30,12 +30,12 @@ public class Friend_AI_Event : MonoBehaviour
         }
         else if(TimeRemainingToDie > 0)
         {
-            if(HasCall.CallingSuccess == true && HasCall.CallingToilet_Helper == true)
+            if(HasCall.CallingSuccess == true && HasCall.CanKillNormalFriend == true)
             {
                 Destroy(GameObject.Find("NormalFriend_AI(Clone)"));
                 TimeRemainingToDie = 15f;
                 HasCall.CallingSuccess = false;
-                HasCall.CallingToilet_Helper = false;
+                HasCall.CanKillNormalFriend = false;
             }
         }
     }

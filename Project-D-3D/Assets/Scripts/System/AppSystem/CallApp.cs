@@ -1,5 +1,3 @@
-
-using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -14,16 +12,19 @@ public class CallApp : MonoBehaviour
     public Stat stat;
 
     private float CallingTime = 3f;
+    [SerializeField]private float CoolDownTime = 6f;
     public bool CallingSuccess = false;
     public bool CallingCoach = false;
     public bool CallingToilet_Helper = false;
-    [SerializeField] bool CanCall = true;
-
+    public bool CanKillNormalFriend = false;
+    public bool CanCall = true;
     void Update()
     {
         if (Phone.onapp == false)
         {
             gameObject.SetActive(false);
+            CoolDownTime = 6f;
+            CanCall = true;
         }
         if (CallingUI.activeInHierarchy == true)
         {
@@ -42,14 +43,25 @@ public class CallApp : MonoBehaviour
                     stat.sanity += 5f;
                     CallingCoach = false;
                 }
+                if(CallingToilet_Helper == true)
+                {
+                    CanKillNormalFriend = true;
+                    CallingToilet_Helper = false;
+                }
+              
             }
 
         }
         if(CanCall == false)
         {
-            StartCoroutine(CoolDown());
+            CoolDownTime = CoolDownTime - Time.deltaTime;
+            if(CoolDownTime <= 0)
+            {
+                CanCall = true;
+                CoolDownTime = 6f;
+            }
         }
-
+        
     }
    
     public void Life_CoachCalling()
@@ -85,9 +97,5 @@ public class CallApp : MonoBehaviour
         CallingTime = 3f;
         Anim.Play("CallingFail");
     }
-    IEnumerator CoolDown()
-    {
-        yield return new WaitForSeconds(5f);
-        CanCall = true;
-    }
+   
 }

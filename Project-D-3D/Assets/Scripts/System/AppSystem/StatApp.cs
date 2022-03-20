@@ -7,7 +7,7 @@ public class StatApp : MonoBehaviour
     [SerializeField] Image SanityBar;
     [SerializeField] Stat Stat;
     [SerializeField] Phone_App Phone;
-    private float MaxSanity = 30f;
+    private float MaxSanity = 40f;
     private float CurrentSanity;
    
     void Update()

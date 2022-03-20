@@ -4,7 +4,7 @@ using UnityEngine;
 public class Stat : MonoBehaviour
 {
     public GameObject MainSpotLight;
-    public float sanity = 20f;
+    public float sanity = 40f;
     public bool dead = false;
     public bool NeedWifiFix = false;
     public bool NeedLightFix = false;
@@ -18,6 +18,11 @@ public class Stat : MonoBehaviour
         {
             dead = true;
         }
+        else if(sanity > 40f)
+        {
+            sanity = 40f;
+        }
+        
     }
     void FixedUpdate()
     {
@@ -30,4 +35,5 @@ public class Stat : MonoBehaviour
             sanity = sanity - Time.deltaTime * 4;
         }
     }
+
 }
