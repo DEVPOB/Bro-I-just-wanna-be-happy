@@ -38,6 +38,7 @@ public class MuscleGuy_AI_Event : MonoBehaviour
                 TimeRemainingToDie = 20f;
                 TimeLookAtMuscleGuy = 5f;
                 Destroy(GameObject.Find("MuscleGuy_AI(Clone)"));
+                FindObjectOfType<SFXManager>().Play("AI_GONE");
             }
         }
     }

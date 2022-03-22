@@ -8,11 +8,6 @@ public class GuyInFrontOf_AI_Event : MonoBehaviour
     public Quotes QuotesScript;
     public float TimeRemainingToCloseLight = 7f;
     [SerializeField]private bool HasDestroy = false;
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(GameObject.Find("GuyInFrontOfDoor_Ai(Clone)") != null)
@@ -37,7 +32,7 @@ public class GuyInFrontOf_AI_Event : MonoBehaviour
         }
         if(HasDestroy == true)
         {
-            FindObjectOfType<SFXManager>().Play("GuyInFrontOfDoor_GoneSFX");
+            FindObjectOfType<SFXManager>().Play("AI_GONE");
             HasDestroy = false;
         }
     }
