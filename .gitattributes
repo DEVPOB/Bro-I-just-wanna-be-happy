@@ -1,6 +1,5 @@
 *.cs linguist-language=C#
-*.cginc text
-*.shader text
+
 
 *.mat merge=unityyamlmerge eol=lf
 *.anim merge=unityyamlmerge eol=lf
