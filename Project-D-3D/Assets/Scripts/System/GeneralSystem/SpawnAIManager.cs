@@ -23,11 +23,11 @@ public class SpawnAIManager : MonoBehaviour
         {
             RandomSpawnTime = Random.Range(10,20);
             print(RandomSpawnTime);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();
             RandomSpawnTime = Random.Range(5,10);
             print(RandomSpawnTime);
-            yield return new WaitForSeconds(50);
+            yield return new WaitForSeconds(RandomSpawnTime);
             RandomSpawning();
             
         }
