@@ -1,4 +1,4 @@
-*.cs diff=csharp text
+*.cs linguist-language=C#
 *.cginc text
 *.shader text
 
